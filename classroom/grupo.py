@@ -1,7 +1,6 @@
 
 
 from classroom.asignatura import Asignatura
-from classroom.asignatura import Asignatura
 
 
 class Grupo:
