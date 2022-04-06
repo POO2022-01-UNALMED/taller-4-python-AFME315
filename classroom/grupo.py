@@ -8,7 +8,7 @@ class Grupo:
 
     grado = "Grado 12" 
 
-    def __init__(self, grupo="grupo ordinado", asignaturas=None, estudiantes=None):
+    def __init__(self, grupo="grupo predeterminado", asignaturas=None, estudiantes=None):
 
         self._grupo = grupo
         self._asignaturas = asignaturas
@@ -22,16 +22,14 @@ class Grupo:
         for x in kwargs.values():
             self._asignaturas.append(Asignatura(x))
 
-    def agregarAlumno(self, alumno, lista=None):
+    def agregarAlumno(self,*args):
             if (lista is None):
                 lista=[]
-            lista.append(alumno)
-            self.listadoAlumnos = self.listadoAlumnos + lista
-            
+
+            for a in args:
+                self.listadoAlumnos.append(a)
+
     def __str__(self):
-        if (self._grupo=="grupo ordinado"):
-            return "Grupo de estudiantes: grupo predeterminado"
-        else:
             return "Grupo de estudiantes:" + self._grupo
 
     @ classmethod
