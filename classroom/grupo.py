@@ -23,14 +23,11 @@ class Grupo:
             self._asignaturas.append(Asignatura(x))
 
     def agregarAlumno(self, alumno, lista=None):
-        if(lista is None):
             if (lista is None):
                 lista=[]
             lista.append(alumno)
             self.listadoAlumnos = self.listadoAlumnos + lista
-        else:
-            self.listadoAlumnos = [alumno]
-
+            
     def __str__(self):
         if (self._grupo=="grupo ordinado"):
             return "Grupo de estudiantes: grupo predeterminado"
